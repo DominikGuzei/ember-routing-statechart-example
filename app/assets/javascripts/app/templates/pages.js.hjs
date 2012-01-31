@@ -1,4 +1,2 @@
 
-<div id="current-page">
-  {{view currentPage}}
-</div>
+{{view currentPage}}
