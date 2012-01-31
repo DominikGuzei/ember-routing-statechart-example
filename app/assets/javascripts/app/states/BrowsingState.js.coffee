@@ -2,6 +2,7 @@
 #= require app/mediators/pagesMediator
 #= require app/views/PagesView
 #= require app/views/pages/ListNotesView
+#= require app/views/pages/CreateNoteView
 
 App = @App
 pagesMediator = App.mediators.pagesMediator
@@ -40,6 +41,9 @@ App.states.BrowsingState = SC.State.extend {
 
     CreateNote: SC.State.extend {
       representRoute: 'notes/create'
+
+      enterState: ->
+        pagesMediator.set 'currentPage', pages.CreateNoteView
     }
 
     logout: ->
