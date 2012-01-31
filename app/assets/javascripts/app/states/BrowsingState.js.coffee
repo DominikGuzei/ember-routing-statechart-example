@@ -32,11 +32,17 @@ App.states.BrowsingState = SC.State.extend {
 
     initialSubstate: 'CreateNote'
 
-    beforeFilter: (context) ->
+    beforeFilter: ->
       unless App.mediators.authenticationMediator.get('loggedIn')
+        # don't call gotoState directly here, because there
+        # might be multiple parts of application interested in
+        # handling the login action
         @get('statechart').send('login')
+
+        # don't trigger transition to substate
         return false
 
+      # trigger transition to substate
       return true
 
     CreateNote: SC.State.extend {
