@@ -1,5 +1,7 @@
 
 #= require app/templates/app
+#= require app/views/PagesView
+#= require app/views/NavigationView
 
 App = @App
 

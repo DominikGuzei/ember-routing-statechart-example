@@ -1,6 +1,5 @@
 #= require app/mediators/authenticationMediator
 #= require app/mediators/pagesMediator
-#= require app/views/PagesView
 #= require app/views/pages/ListNotesView
 #= require app/views/pages/CreateNoteView
 

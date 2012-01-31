@@ -15,5 +15,8 @@ App.mediators = {}
 App.states = {}
 App.templates = {}
 
+# provides namespace for pages
+App.views.pages = {}
+
 # export App to global namespace
 @App = App

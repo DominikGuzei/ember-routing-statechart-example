@@ -1,2 +1,3 @@
 
+{{view App.views.NavigationView}}
 {{view App.views.PagesView}}
