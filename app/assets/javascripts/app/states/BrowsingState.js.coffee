@@ -1,6 +1,11 @@
 #= require app/mediators/authenticationMediator
+#= require app/mediators/pagesMediator
+#= require app/views/PagesView
+#= require app/views/pages/ListNotesView
 
 App = @App
+pagesMediator = App.mediators.pagesMediator
+pages = App.views.pages
 
 App.states.BrowsingState = SC.State.extend {
 
@@ -13,6 +18,9 @@ App.states.BrowsingState = SC.State.extend {
     ListNotes: SC.State.extend {
 
       representRoute: 'notes'
+
+      enterState: ->
+        pagesMediator.set 'currentPage', pages.ListNotesView
 
       createNote: ->
         @gotoState 'Browsing.Restricted.CreateNote'
