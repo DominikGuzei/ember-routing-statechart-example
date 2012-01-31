@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require lib/ember
 //= require lib/sproutcore-routing
-//= require lib/ember-statechart
+//= require lib/sproutcore-statechart
 
 //= require app/App
 //= require app/statechart
