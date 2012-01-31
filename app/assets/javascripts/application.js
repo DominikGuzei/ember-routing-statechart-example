@@ -12,4 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require lib/ember
+//= require lib/sproutcore-routing
+//= require lib/ember-statechart
+
+//= require app/App
+//= require app/statechart
