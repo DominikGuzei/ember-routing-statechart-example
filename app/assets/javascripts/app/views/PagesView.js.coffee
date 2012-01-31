@@ -1,14 +1,26 @@
 
-#= require app/templates/pages
-
 App = @App
 
 App.views.PagesView = SC.View.extend {
 
-  templateName: 'app_templates_pages'
   elementId: 'pages'
 
-  currentPageBinding: 'App.mediators.pagesMediator.currentPage'
+  currentPageView: null
+
+  currentPageChanged: SC.observer (->
+    @_removeCurrentPageView()
+
+    currentPage = App.mediators.pagesMediator.get('currentPage').create()
+    currentPage.appendTo @get('element')
+
+    @set 'currentPageView', currentPage
+
+  ), 'App.mediators.pagesMediator.currentPage'
+
+  _removeCurrentPageView: ->
+    currentPageView = @get 'currentPageView'
+    if currentPageView
+      currentPageView.remove()
 
 }
 
