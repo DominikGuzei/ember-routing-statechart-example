@@ -1,5 +1,5 @@
 
-App = this.App
+App = @App
 
 App.controllers.statechartController = SC.Object.create(SC.StatechartDelegate, {
 

@@ -1,7 +1,7 @@
 
 #= require app/mediators/authenticationMediator
 
-App = this.App
+App = @App
 
 App.states.AuthenticationState = SC.State.extend {
 

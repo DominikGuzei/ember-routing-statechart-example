@@ -1,6 +1,6 @@
 #= require app/mediators/authenticationMediator
 
-App = this.App
+App = @App
 
 App.states.BrowsingState = SC.State.extend {
 

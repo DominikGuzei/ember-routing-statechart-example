@@ -1,5 +1,5 @@
 
-App = this.App
+App = @App
 
 App.mediators.authenticationMediator = SC.Object.create {
 

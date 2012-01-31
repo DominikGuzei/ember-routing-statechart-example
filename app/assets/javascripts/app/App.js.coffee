@@ -16,4 +16,4 @@ App.states = {}
 App.templates = {}
 
 # export App to global namespace
-this.App = App
+@App = App

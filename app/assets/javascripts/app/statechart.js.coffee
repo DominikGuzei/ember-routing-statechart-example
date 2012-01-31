@@ -5,7 +5,7 @@
 #= require app/states/BrowsingState
 #= require app/states/AuthenticationState
 
-App = this.App
+App = @App
 
 App.statechart = SC.Statechart.create {
 
