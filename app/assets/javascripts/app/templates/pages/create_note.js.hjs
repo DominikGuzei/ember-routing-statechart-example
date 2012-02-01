@@ -1,2 +1,7 @@
 
 <h2>Create Note:</h2>
+  
+<p>This could be the page to create new notes.</p>
+
+<input placeholder="Title.." type="textfield" disabled="disabled" />
+<textarea placeholder="Content.."  disabled="disabled"></textarea>
