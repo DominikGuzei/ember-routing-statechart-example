@@ -1,4 +1,3 @@
-
 # Quick Notes - Ember.js Example Application
 
 Quick Notes is a small example to showcase some of the capabilities of 
@@ -23,6 +22,6 @@ This image shows the rough specification of the application as UML state-diagram
 
 ## Credits
 
-Thanks to Michael Cohen for creating the super awesome sproutcore-statechart framework!
-Quick Notes was designed and built by Dominik Guzei
-Logo designed by [Double-J Design](http://www.doublejdesign.co.uk/)
+* Thanks to Michael Cohen (aka. FrozenCanuck) for creating the super awesome sproutcore-statechart framework!
+* Quick Notes was designed and built by [Dominik Guzei](http://wizzart.at/)
+* Logo designed by [Double-J Design](http://www.doublejdesign.co.uk/)
