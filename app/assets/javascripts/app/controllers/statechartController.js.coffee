@@ -6,7 +6,6 @@ App.controllers.statechartController = SC.Object.create(SC.StatechartDelegate, {
   lastRouteContext: null
 
   statechartShouldStateHandleTriggeredRoute: (statechart, state, context) ->
-    @set 'lastRouteContext', context
 
     lastCheckedState = state
     shouldTrigger = true
@@ -16,7 +15,7 @@ App.controllers.statechartController = SC.Object.create(SC.StatechartDelegate, {
       if lastCheckedState.beforeFilter
         shouldTrigger = lastCheckedState.beforeFilter()
         if not shouldTrigger
-          SC.routes.set 'location', null
+          @set 'lastRouteContext', context
           break
 
       lastCheckedState = lastCheckedState.get 'parentState'
