@@ -4,7 +4,7 @@
 Quick Notes is a small example to showcase some of the capabilities of 
 [sproutcore-statechart](https://github.com/emberjs-addons/sproutcore-statechart) and 
 [sproutcore-routing](https://github.com/emberjs-addons/sproutcore-routing) in 
-[Ember.js](https://github.com/emberjs/ember.js) applications.
+[Ember.js](https://github.com/emberjs/ember.js)
 
 View online: [Quick Notes Application](http://ember-quicknotes.herokuapp.com/)
 
