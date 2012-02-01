@@ -20,6 +20,14 @@ This image shows the rough specification of the application as UML state-diagram
 
 ![Statechart Specification of Quick Notes](https://github.com/DominikGuzei/ember-routing-statechart-example/blob/master/spec/architecture/ember-app-statechart.png?raw=true)
 
+## For Non-Rails Developers
+
+You find the JavaScript application written in CoffeeScript in the app/assets/javascripts folder. 
+If you wonder about the '#= require x/y/z' statements -> these are precompile 'include' statements
+for Sprockets in Rails and are not included in the resulting JavaScript code base.
+
+If you don't use rails, you should.
+
 ## Credits
 
 * Thanks to Michael Cohen (aka. FrozenCanuck) for creating the super awesome sproutcore-statechart framework!
