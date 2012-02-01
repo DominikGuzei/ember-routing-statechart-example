@@ -5,6 +5,6 @@
   {{#if loggedIn}}
     <li><button type="button" {{action "logout"}}>Logout</button></li>
   {{else}}
-    <li><a href="#user/login">Login</a></li>
+    <li><button type="button" {{action "login"}}>Login</button></li>
   {{/if}}
 </ul>

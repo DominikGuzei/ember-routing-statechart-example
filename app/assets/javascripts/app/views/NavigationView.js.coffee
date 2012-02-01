@@ -13,4 +13,7 @@ App.views.NavigationView = SC.View.extend {
   logout: ->
     App.statechart.send 'logout'
 
+  login: ->
+    App.statechart.send 'login'
+
 }

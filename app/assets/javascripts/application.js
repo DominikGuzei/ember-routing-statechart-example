@@ -15,6 +15,7 @@
 //= require lib/ember
 //= require lib/sproutcore-routing
 //= require lib/sproutcore-statechart
+//= require lib/jquery.tools.overlay.min
 
 //= require app/App
 //= require app/statechart
