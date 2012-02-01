@@ -3,6 +3,9 @@ App = @App
 
 App.mediators.pagesMediator = SC.Object.create {
 
-  currentPage: null
+  currentPage: null,
+
+  listNotesIsCurrent: NO
+  createNoteIsCurrent: NO
 
 }

@@ -6,14 +6,24 @@ App = @App
 App.views.NavigationView = SC.View.extend {
 
   templateName: 'app_templates_navigation'
-  elementId: 'navigation'
+  elementId: 'nav-main'
+  tagName: 'nav'
 
   loggedInBinding: 'App.mediators.authenticationMediator.loggedIn'
 
-  logout: ->
+  listNotesIsCurrentBinding: 'App.mediators.pagesMediator.listNotesIsCurrent'
+  createNoteIsCurrentBinding: 'App.mediators.pagesMediator.createNoteIsCurrent'
+
+  listNotesClicked: ->
+    App.statechart.send 'listNotesClicked'
+
+  createNoteClicked: ->
+    App.statechart.send 'createNoteClicked'
+
+  logoutClicked: ->
     App.statechart.send 'logout'
 
-  login: ->
+  loginClicked: ->
     App.statechart.send 'login'
 
 }

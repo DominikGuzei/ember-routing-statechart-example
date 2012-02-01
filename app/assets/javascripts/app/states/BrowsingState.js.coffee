@@ -7,12 +7,23 @@ App = @App
 pagesMediator = App.mediators.pagesMediator
 pages = App.views.pages
 
+ROUTES = {
+  listNotes: 'notes'
+  createNote: 'notes/create'
+}
+
 App.states.BrowsingState = SC.State.extend {
 
   initialSubstate: 'Public'
 
-  logout: ->
-    @gotoState 'Browsing.Public.ListNotes'
+  # implement navigation as actions
+  listNotes: (->
+    SC.routes.set 'location', ROUTES.listNotes
+  ).handleActions 'logout', 'listNotesClicked'
+
+  createNote: (->
+    SC.routes.set 'location', ROUTES.createNote
+  ).handleActions 'createNoteClicked'
 
   Public: SC.State.extend {
 
@@ -29,11 +40,15 @@ App.states.BrowsingState = SC.State.extend {
 
     ListNotes: SC.State.extend {
 
-      representRoute: 'notes'
+      representRoute: ROUTES.listNotes
 
       enterState: ->
-        SC.routes.set('location', 'notes')
+        SC.routes.set 'location', ROUTES.listNotes
         pagesMediator.set 'currentPage', pages.ListNotesView
+        pagesMediator.set 'listNotesIsCurrent', YES
+
+      exitState: ->
+        pagesMediator.set 'listNotesIsCurrent', NO
 
     }
   }
@@ -54,11 +69,15 @@ App.states.BrowsingState = SC.State.extend {
       return true
 
     CreateNote: SC.State.extend {
-      representRoute: 'notes/create'
+      representRoute: ROUTES.createNote
 
       enterState: ->
-        SC.routes.set('location', 'notes/create')
+        SC.routes.set 'location', ROUTES.createNote
         pagesMediator.set 'currentPage', pages.CreateNoteView
+        pagesMediator.set 'createNoteIsCurrent', YES
+
+      exitState: ->
+        pagesMediator.set 'createNoteIsCurrent', NO
     }
   }
 }

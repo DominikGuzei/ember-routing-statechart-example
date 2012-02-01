@@ -1,8 +1,16 @@
 
-<h2>Notes:</h2>
-<ul>
-  <li>First Note</li>
-  <li>Second Note</li>
-  <li>Third Note</li>
-  <li>Fourth Note</li>
+<h2>Notes</h2>
+<ul id="notes">
+  <li>
+    <h3>First Note</h3>
+    <p>Content of first note..</p>
+  </li>
+  <li>
+    <h3>Second Note</h3>
+    <p>Content of second note..</p>
+  </li>
+  <li>
+    <h3>Third Note</h3>
+    <p>Content of third note..</p>
+  </li>
 </ul>

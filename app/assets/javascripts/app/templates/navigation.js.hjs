@@ -1,10 +1,25 @@
 
 <ul>
-  <li><a href="#notes">List</a></li>
-  <li><a href="#notes/create">Create</a></li>
+  <li>
+    {{#view SC.Button action="listNotesClicked"
+            target="parentView"
+            classBinding="parentView.listNotesIsCurrent:active"}}
+      List Notes
+    {{/view}}
+  </li>
+
+  <li>
+    {{#view SC.Button
+            action="createNoteClicked"
+            target="parentView"
+            classBinding="parentView.createNoteIsCurrent:active"}}
+      Create Note
+    {{/view}}
+  </li>
+
   {{#if loggedIn}}
-    <li><button type="button" {{action "logout"}}>Logout</button></li>
+    <li><button type="button" {{action "logoutClicked"}}>Logout</button></li>
   {{else}}
-    <li><button type="button" {{action "login"}}>Login</button></li>
+    <li><button type="button" {{action "loginClicked"}}>Login</button></li>
   {{/if}}
 </ul>

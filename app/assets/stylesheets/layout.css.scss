@@ -1,0 +1,84 @@
+
+#app {
+  margin: 40px auto;
+  width: 400px;
+}
+
+#logo {
+  margin-top: 5px;
+  float: left;
+  margin-right: 1em;
+}
+
+#app-content {
+  clear: both;
+  margin-top: 1em;
+  border: 1px solid #ddd;
+  background-color: #efefef;
+
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+#login-overlay {
+  width: 400px;
+  display: none;
+
+  border:10px solid #666;
+  background-color: white;
+  /* for modern browsers use semi-transparent color on the border. nice! */
+  border:10px solid rgba(82, 82, 82, 0.698);
+
+  /* hot CSS3 features for mozilla and webkit-based browsers (rounded borders) */
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+
+  > div {
+    margin: 10px;
+  }
+  
+  p {
+    margin: 0.5em 0;
+
+    &.info {
+      font-size: 0.8em;
+      color: #5E5E5E;
+    }
+
+    &.error {
+      color: #A70A0A;
+    }
+  }
+}
+
+#nav-main {
+
+  float:left;
+  width: 100%;
+
+  li button {
+    border: none;
+    float: left;
+    width: 33.33%;
+    padding: 0.3em 0;
+    background-color: #ddd;
+    margin: 0;
+  }
+  
+  li button:hover, li button.active {
+    background-color: #ccc;
+    cursor: pointer;
+  }
+}
+
+#pages {
+  clear: both;
+  padding: 1em;
+}
+
+#notes {
+  li {
+    margin: 0.5em 0;
+  }
+}

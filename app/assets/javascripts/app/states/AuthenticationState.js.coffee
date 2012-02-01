@@ -49,7 +49,7 @@ App.states.AuthenticationState = SC.State.extend {
         authenticationMediator.set 'password', password
         @gotoState 'Authentication.LoggedIn'
       else
-        authenticationMediator.set 'error', 'username or password are wrong.'
+        authenticationMediator.set 'error', 'Username or password are wrong.'
     ).handleActions('authenticate', 'loginFormSubmitted')
 
     loginFormCancelled: ->

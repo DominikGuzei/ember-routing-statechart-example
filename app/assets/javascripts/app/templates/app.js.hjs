@@ -1,3 +1,10 @@
 
-{{view App.views.NavigationView}}
-{{view App.views.PagesView}}
+<img id="logo" src="/assets/logo.png"/>
+
+<h1>Quick Notes</h1>
+<p id="slogan">Example for Statecharts and Routing in Ember.js</p>
+
+<div id="app-content">
+  {{view App.views.NavigationView}}
+  {{view App.views.PagesView}}
+</div>
