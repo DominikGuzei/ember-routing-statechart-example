@@ -9,15 +9,16 @@ App.views.PagesView = SC.View.extend {
   currentPageView: null
 
   didInsertElement: ->
-    @_makeCurrentPageView @get('currentPage').create()
+    @_makeCurrentPageView @get('currentPage')
 
   currentPageChanged: SC.observer (->
-    @_makeCurrentPageView @get('currentPage').create()
+    @_makeCurrentPageView @get('currentPage')
   ), 'currentPage'
 
   _makeCurrentPageView: (pageView) ->
-    @_removeCurrentPageView()
-    @_addCurrentPageView pageView
+    if pageView?
+      @_removeCurrentPageView()
+      @_addCurrentPageView pageView.create()
 
   _removeCurrentPageView: ->
     currentPageView = @get 'currentPageView'

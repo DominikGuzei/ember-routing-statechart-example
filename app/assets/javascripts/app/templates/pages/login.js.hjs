@@ -1,0 +1,16 @@
+
+<h2>Login:</h2>
+
+{{#if mediator.loggedIn}}
+  <p>You are logged in as '{{mediator.userName}}'.</p>
+{{else}}
+  <p class="notice">{{mediator.notice}}</p>
+  <p class="error">{{mediator.error}}</p>
+
+  <input type="text" placeholder="username" id="login-username" />
+  <input type="password" placeholder="password" id="login-password" />
+
+  <button type="button" {{action "login"}}>login</button>
+
+  <p class="info">You can use 'user' as userName and 'password' as password.</p>
+{{/if}}

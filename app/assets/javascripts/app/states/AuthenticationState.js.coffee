@@ -3,56 +3,36 @@
 
 App = @App
 
+authenticationMediator = App.mediators.authenticationMediator
+
 App.states.AuthenticationState = SC.State.extend {
 
-  initialSubstate: 'Login',
+  initialSubstate: 'LoggedOut'
 
-  Login: SC.State.extend {
+  LoggedOut: SC.State.extend {
 
-    initialSubstate: 'LoggedOut'
+    enterState: ->
+      authenticationMediator.set 'loggedIn', NO
+      authenticationMediator.set 'userName', null
+      authenticationMediator.set 'password', null
 
-    LoggedOut: SC.State.extend {
-
-      enterState: ->
-        App.mediators.authenticationMediator.set 'loggedIn', NO
-        App.mediators.authenticationMediator.set 'userName', null
-        App.mediators.authenticationMediator.set 'password', null
-
-      login: ->
-        @gotoState 'Authentication.Login.Authenticate'
-    }
-
-    LoggedIn: SC.State.extend {
-      enterState: ->
-        App.mediators.authenticationMediator.set 'loggedIn', YES
-
-        context = App.controllers.statechartController.get 'lastRouteContext'
-        if context then context.retry()
-
-      logout: ->
-        @gotoState 'Authentication.Login.LoggedOut'
-    }
-
-    Authenticate: SC.State.extend {
-      enterState: ->
-        App.mediators.authenticationMediator.set 'userName', 'DominikGuzei'
-        App.mediators.authenticationMediator.set 'password', 'xyz'
-
-        @gotoState 'Authentication.Login.LoggedIn'
-    }
+    authenticate: (userName, password) ->
+      if userName is 'user' and password is 'password'
+        authenticationMediator.set 'userName', userName
+        authenticationMediator.set 'password', password
+        @gotoState 'Authentication.LoggedIn'
+      else
+        authenticationMediator.set 'error', 'username or password are wrong.'
   }
 
-  Registration: SC.State.extend {
+  LoggedIn: SC.State.extend {
+    enterState: ->
+      authenticationMediator.set 'loggedIn', YES
 
-    initialSubstate: 'Intern'
+      context = App.controllers.statechartController.get 'lastRouteContext'
+      if context then context.retry()
 
-    Intern: SC.State.extend {
-
-    }
-
-    Facebook: SC.State.extend {
-
-    }
+    logout: ->
+      @gotoState 'Authentication.LoggedOut'
   }
-
 }
